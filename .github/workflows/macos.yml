@@ -1,0 +1,19 @@
+# Build XiX via docker.
+# We are testing mostly the bootstrap-mk.sh and mk way to build xix (not dune).
+# See also Dockerfile at the root of the project.
+
+name: docker
+
+on:
+  pull_request_target: {}
+  workflow_dispatch: null
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos12
+    steps:
+      - uses: actions/checkout@v4
+      - run: uname -a
+
