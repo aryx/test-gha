@@ -1,8 +1,4 @@
-# Build XiX via docker.
-# We are testing mostly the bootstrap-mk.sh and mk way to build xix (not dune).
-# See also Dockerfile at the root of the project.
-
-name: docker
+name: macos
 
 on:
   pull_request_target: {}
@@ -16,4 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: uname -a
+      - run: file gofmt
+      - run: file hello
+
+
 
